@@ -9,7 +9,6 @@ public class First {
     }
 
     private void run() {
-
         Scanner scanner = new Scanner(System.in);
         try {
             //Read number from keyboard
@@ -19,7 +18,6 @@ public class First {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     /*

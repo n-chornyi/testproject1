@@ -29,7 +29,6 @@ public class Second {
             int[][] matrix = generateMatrix(n);
             //List cities
             List<String> city_names = new ArrayList<>();
-
             for (int test = 0; test < s; test++) {
                 for (int i = 0; i < n; i++) {
                     //Input city
@@ -40,7 +39,6 @@ public class Second {
                     if (p > n || p < 1) {
                         throw new Exception("Error input, should be from 1 to " + n);
                     }
-
                     //Input nr - index of a city connected to NAME (the index of the first city is 1)]
                     //      cost - the transportation cost
                     for (int j = 0; j < p; j++) {
@@ -48,16 +46,13 @@ public class Second {
                         int cost = Integer.parseInt(scanner.next());
                         matrix[i][nr] = cost;
                     }
-
                 }
                 matrix = floyd(matrix, n);
-
                 //Input the number of paths to find
                 int r = scanner.nextInt();
                 if (r < 1 || r > 100) {
                     throw new Exception("Error input, should be from 1 to 100");
                 }
-
                 //Input start & end cities
                 int[] result = new int[r];
                 for (int j=0; j<r; j++) {
@@ -67,9 +62,8 @@ public class Second {
                     int end_number = city_names.indexOf(end);
                     result[j] = matrix[start_number][end_number];
                 }
-
-                for (int j=0; j<result.length; j++) {
-                    System.out.println(result[j]);
+                for (int i : result) {
+                    System.out.println(i);
                 }
             }
         } catch (Exception e) {
