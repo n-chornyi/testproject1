@@ -76,7 +76,9 @@ public class Second {
         int[][] temp = new int[n][n];
         for (int i=0; i<n; i++) {
             for (int j=0; j<n; j++) {
-                temp[i][j] = LOCAL_VARIABLE;
+                if (j-i != 0) {
+                    temp[i][j] = LOCAL_VARIABLE;
+                }
             }
         }
         return temp;
